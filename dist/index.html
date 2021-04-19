@@ -1,0 +1,22 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <link id="cssBundle" rel="stylesheet" href="main.css">
+        <script id="jsBundle" src="main.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document.body.innerHTML = [
+                    '<ul>',
+                    '<li>CSS: <a href='+document.getElementById('cssBundle').href+'>'+document.getElementById('cssBundle').href+'</a></li>',
+                    '<li>JS: <a href='+document.getElementById('jsBundle').src+'>'+document.getElementById('jsBundle').src+'</b></li>',
+                    '</ul>'
+                ].join('')
+            })
+        </script>
+    </head>
+
+    <body>
+        <!-- local urls printed here for quick local development -->
+    </body>
+</html>

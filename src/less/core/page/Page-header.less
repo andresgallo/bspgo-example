@@ -1,0 +1,45 @@
+.Page {
+    --primaryButtonBgColor: #845535;
+    
+    &-header {
+        &-bar {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            &-logo {
+                margin: 14px;
+            }
+        }
+
+        [data-transparentnav] & {
+            position: fixed;
+            z-index: 99999;
+            width: 100%;
+
+            &-bar {
+                transition: background 300ms ease;
+            }
+        }
+        
+        [data-transparentnav='true'] body:not([data-toggle-header='hamburger-menu']) & {
+            background: transparent;
+            --headerBgColor: transparent;
+            --headerTextColor: white;
+
+            &-bar {
+                background: transparent;
+                box-shadow: none;
+
+                &-logo {
+                    filter: invert(1) contrast(2);
+                }
+            }
+
+            .NavigationItem {
+                .NavigationItem-addTextShadow();
+            }
+            
+        }
+    }
+}

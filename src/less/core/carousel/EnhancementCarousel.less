@@ -1,0 +1,19 @@
+.EnhancementCarousel {
+    min-width: 100vw;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    &-slide {
+        background: black;
+    }
+
+    [data-hasintersectionobserver='true'] & {
+        transform: scale(0.6);
+        transition: transform 1200ms ease;
+        transform-origin: top center;
+
+        &[data-module-enteredview='true'] {
+            transform: scale(1);
+        }
+    }
+}

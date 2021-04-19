@@ -1,0 +1,16 @@
+.ListCarouselF {
+    @media @mq-viewport-md {
+        &-gallery-item {
+            filter: grayscale(1);
+            opacity: 0.5;
+            transform: scale(0.8) translateX(-100px);
+            transition: transform 300ms ease;
+
+            &.is-selected {
+                filter: grayscale(0);
+                opacity: 1;
+                transform: scale(1) translateX(0);
+            }
+        }
+    }  
+}

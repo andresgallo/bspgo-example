@@ -1,0 +1,45 @@
+.NavigationItem-addTextShadow () {
+    &-text {
+        &-link {
+            text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+@media @mq-viewport-md {
+    .NavigationItem {
+        position: static;
+    
+        &-items {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            padding: 0;
+    
+            &-container {
+                left: 0 !important;
+                right: 0;
+                top: 100%;
+                box-shadow: none !important;
+                --tail-offset-left: 0 !important;
+    
+                &::before, 
+                &::after {
+                    content: none !important;
+                }
+
+                [data-transparentnav='true'] & {
+                    background: rgba(255, 255, 255, 0.1);
+
+                    & .NavigationLink:not(:hover) .NavigationLink-title {
+                        color: #fff;
+                        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.7);
+                    }
+                }
+            }
+        }
+    }
+}

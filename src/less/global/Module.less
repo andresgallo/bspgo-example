@@ -1,0 +1,28 @@
+[data-modulewell]:not([class*='Container-column']) > [data-module] {
+    &:not([class*='Container']):not([style*='--moduleBgColor']) {
+        [data-hasintersectionobserver='true'] & {
+            opacity: 0.1;
+    
+            &[data-module-enteredview='true'] {
+                animation: loadIn 800ms forwards;
+            }
+        }
+    }
+}
+
+[data-hasintersectionobserver='true'] {
+    [data-module][style*='--moduleBgColor'] {
+        background: linear-gradient(90deg, var(--moduleBgColor) 0%, var(--moduleBgColor) 100%, transparent 100%, transparent 100%);
+        background-repeat: no-repeat;
+        background-size: 0;
+        transition: background-size 1200ms 300ms ease;
+
+        &:nth-child(2n) {
+            background-position: right;
+        }
+
+        &[data-module-enteredview='true'] {
+            background-size: 100%;
+        }
+    }
+}
